@@ -60,11 +60,18 @@ struct ContentView: View {
     
     func getImageData() -> String{
         //todo modify to actually take camera image and convert
-        let myUIImage = UIImage(named: "iconimg")
-        let imageData = myUIImage!.pngData()
-        //let imageData = myUIImage!.jpegData(compressionQuality: 0)
+        
+        //optional for png data
+        //let myUIImage = UIImage(named: "iconimg")
+        //let imageData = myUIImage!.pngData()
+        
+        // if jpeg
+        let myUIImage = UIImage(named: "icxlogo")
+        let imageData = myUIImage!.jpegData(compressionQuality: 0)
         let base64ImageString = imageData?.base64EncodedString()
-        return base64ImageString!
+        let base64StringPrefix = "data:image/jpeg;base64,"
+        let fullbase64ImageString = base64StringPrefix + base64ImageString!
+        return fullbase64ImageString
     }
     
 }
