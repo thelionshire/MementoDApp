@@ -1,0 +1,6 @@
+framework module ICONKit {
+  umbrella header "ICONKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
